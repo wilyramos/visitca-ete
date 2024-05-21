@@ -5,6 +5,7 @@
 
 
     <p>Añadiendo un mensaje branch de prueba para recomendacion </p>
+    <p class="paquetes__descripcion"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
     <?php
 
 
