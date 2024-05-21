@@ -1,0 +1,102 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.header{
+    
+    min-height: 20rem;
+    background-image: 
+    url(../img/13.svg), url(../img/0.svg), 
+    linear-gradient(to right, 
+    rgba(v.$negro, .8), rgba(v.$negro, 0)), url(../img/header.jpg);
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 800px, 600px, cover, cover;
+    background-position: top left, bottom right, center center, center center;
+    overflow: hidden;    
+    
+
+
+    &__contenedor{
+        @include m.contenedor;
+    }
+
+    &__navegacion{
+
+        padding: 5rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        @include m.tablet{
+            justify-content: flex-end;
+        }
+
+    }
+    &__enlace{
+        @include m.enlace;
+    }
+
+    &__form{
+        display: flex;
+    }
+    &__submit{
+        @extend .header__enlace;
+    }
+
+    &__contenido{
+        padding-top: 10rem;
+        @include m.tablet{
+            padding-top: 5rem;
+        }
+
+
+    }
+
+    &__logo{
+        @include m.texto-fluido(1rem, 8rem);
+        @include m.texto-degradado(v.$amarillo, v.$azul);
+
+        text-align: center;
+        @include m.tablet{
+            text-align: left;
+            display: inline-block;
+
+        }
+    }
+    &__texto{
+        width: 40rem;
+        font-size: 2rem;
+
+        font-weight: v.$bold;
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet{
+            text-align: left;
+        }
+
+        &--modalidad{
+            font-size: 2rem;
+        }
+
+    }
+    &__boton{
+        @include m.boton(v.$secundario, v.$blanco);
+        text-transform: uppercase;
+        margin: 2rem 0;
+        @include m.tablet{
+            width: auto;
+        }
+    }    
+}
+
+@keyframes zoomInOut {
+    0% {
+      transform: scale(1); /* Tamaño original */
+    }
+    50% {
+      transform: scale(1.1); /* Zoom in al 50% de la animación */
+    }
+    100% {
+      transform: scale(1); /* Vuelve al tamaño original al final */
+    }
+  }

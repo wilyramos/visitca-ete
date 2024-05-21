@@ -1,0 +1,5 @@
+#lista de archivos a ignorar
+
+node_modules
+vendor
+includes/.env
