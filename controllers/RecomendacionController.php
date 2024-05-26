@@ -122,6 +122,7 @@ class RecomendacionController {
 
         $usuarios[5]->preferencias = new Preferencias(6, 6, 3, 45, "F", "Cálido", "Mañana", "Verano");
 
+
         $usuario_nuevo = new Usuario(
             [
                 'usuario_id' => 5,
@@ -144,10 +145,10 @@ class RecomendacionController {
         $empresas = Empresa::all();
 
         $recomendaciones = recomendar($usuario_nuevo, $usuarios);
-        echo ("Para el usuario nuevo: " . $usuario_nuevo->nombre . " " . $usuario_nuevo->apellido . "<br>");
-        foreach ($recomendaciones as $usuario => $recomendacion) {
-            echo "Usuario: {$usuario}, Similitud: {$recomendacion['similitud']}<br>";
-        }
+        // echo ("Para el usuario nuevo: " . $usuario_nuevo->nombre . " " . $usuario_nuevo->apellido . "<br>");
+        // foreach ($recomendaciones as $usuario => $recomendacion) {
+        //     echo "Usuario: {$usuario}, Similitud: {$recomendacion['similitud']}<br>";
+        // }
 
 
         // Renderizar la vista     
