@@ -34,6 +34,7 @@ class Usuario extends ActiveRecord {
     }
 
 
+
     // Validar el Login de Usuarios
     public function validarLogin() {
         if(!$this->email) {
@@ -119,3 +120,9 @@ class Usuario extends ActiveRecord {
         $this->token = uniqid();
     }
 }
+
+
+// Crear un nuevo usuario
+
+
+

@@ -3,125 +3,175 @@
 @use 'base/variables' as v;
 
 
-.recomendacion {
-    &.contenedor {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-
-    &__grid{
-        @include m.contenedor;
-        @include m.grid(2, 3rem);
-        @include m.tablet{
-            display: grid;
-            grid-template-columns: 1fr 3fr 2fr;
-            gap: 20px;
-        }
-    }
-    
-    .resultados {
-        background-color: #f7f7f7;
-        padding: 20px;
-        border-radius: 8px;
-
-        &__subheading {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .recomendacion__texto {
-            margin-bottom: 20px;
-        }
-
-        .swiper {
-            .swiper-wrapper {
-                display: flex;
-                gap: 20px;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-            }
-
-            .evento {
-                background-color: #fff;
-                padding: 10px;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                flex: 1 1 auto;
-                transition: all 0.3s ease;
-
-                &__nombre {
-                    font-size: 16px;
-                    margin-bottom: 5px;
-                }
-
-                &__introduccion {
-                    font-size: 14px;
-                    margin-bottom: 10px;
-                }
-
-                &__imagen-autor {
-                    border-radius: 4px;
-                    width: 100%;
-                    height: auto;
-                    transition: transform 0.3s ease;
-
-                    &:hover {
-                        transform: scale(1.05);
-                    }
-                }
-            }
-        }
-    }
-}
-
-// solo recomnedacion de actividades
-
-
-.recomendacion__texto {
+.recomendacion.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .recomendacion__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
-}
+  
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+  }
+  
+  .resultados {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    &__subheading {
+      font-size: 22px;
+      margin-bottom: 18px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+  
+    .recomendacion__texto {
+      font-size: 3rem;
+      color: #7f8c8d;
+    }
+  
+    .swiper .swiper-wrapper {
+      display: flex;
+      gap: 1rem;
+    }
+  
+    .sitio {
+      padding: 1rem;
+      flex: 1 1 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);        
+      }
+  
+      &__nombre {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #34495e;
+      }
+  
+      &__imagen-autor {
+        border-radius: 10px;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  
+  .recomendacion__actividad {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #ffffff;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .recomendacion__subheading {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .actividad__nombre {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  .actividad__descripcion {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+  }
+  
+  .preferencia ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .preferencia ul li {
+    margin-bottom: 10px;
+    color: #7f8c8d;
+  }
+  
+  .actividad__similitud {
+    font-style: italic;
+    color: #95a5a6;
+  }
 
-.recomendacion__actividad {
-    border: 1px solid #ddd;
+
+  // SIMILITUDES CON OTROS USUARIOS
+
+.section-similares {
+    background-color: v.$gris-claro;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.recomendacion__actividad:hover {
+.usuarios__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.usuario {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.usuario:hover {
     transform: translateY(-5px);
 }
 
-.recomendacion__subheading {
-    font-size: 1.5rem;
+.usuario__nombre {
+    font-weight: bold;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
-.actividad__nombre {
-    font-size: 1.2rem;
+.preferencias {
+    margin-top: 10px;
+}
+
+.preferencias__titulo {
+    font-weight: bold;
+    font-size: 2rem;
     margin-bottom: 5px;
 }
 
-.actividad__descripcion {
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.preferencia ul {
-    list-style: none;
+.preferencias p {
+    margin: 0;
     padding: 0;
-}
-
-.preferencia ul li {
-    margin-bottom: 5px;
-}
-
-.actividad__similitud {
-    font-style: italic;
-    color: #777;
+    font-size: 1.6rem;
+    color: #14123b;
+    border-radius: 8px;
 }

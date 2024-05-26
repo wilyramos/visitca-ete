@@ -20,59 +20,135 @@ class RecomendacionController {
         $preferencias = array();
         
         // Crear usuarios
-        $usuarios[] = new Usuario(1, "Juan", "Perez", "juan@example.com", "123456789");
-        $usuarios[] = new Usuario(2, "Maria", "Gomez", "maria@example.com", "987654321");
-        $usuarios[] = new Usuario(3, "Carlos", "Lopez", "carlos@example.com", "456789123");
-        $usuarios[] = new Usuario(4, "Ana", "Martinez", "ana@example.com", "456123789");
-        
-        // Crear actividades
-        $actividades[] = new Actividad(1, "Senderismo", "Actividad de caminata en la naturaleza.");
-        $actividades[] = new Actividad(2, "Visita a museos", "Explorar museos y exposiciones.");
-        $actividades[] = new Actividad(3, "Playa", "Día de playa y actividades acuáticas.");
-        $actividades[] = new Actividad(4, "Excursión en bicicleta", "Paseo en bicicleta por la ciudad.");
-        
-        // Crear preferencias
-        $preferencias[] = new Preferencias(1, 1, 1, 25, "M", "Cálido", "Mañana", "Verano");
-        $preferencias[] = new Preferencias(2, 2, 2, 30, "F", "Templado", "Tarde", "Primavera");
-        $preferencias[] = new Preferencias(3, 3, 3, 40, "M", "Cálido", "Tarde", "Verano");
-        $preferencias[] = new Preferencias(4, 4, 1, 28, "F", "Cálido", "Mañana", "Verano");
-        $preferencias[] = new Preferencias(5, 1, 2, 25, "M", "Cálido", "Tarde", "Verano");
-        $preferencias[] = new Preferencias(6, 2, 3, 30, "F", "Templado", "Mañana", "Primavera");
-        $preferencias[] = new Preferencias(7, 3, 4, 40, "M", "Cálido", "Noche", "Verano");
-        $preferencias[] = new Preferencias(8, 4, 3, 28, "F", "Cálido", "Tarde", "Verano");
-        $preferencias[] = new Preferencias(9, 1, 4, 25, "M", "Cálido", "Mañana", "Verano");
-        $preferencias[] = new Preferencias(10, 2, 1, 30, "F", "Templado", "Tarde", "Primavera");
-        $preferencias[] = new Preferencias(11, 3, 2, 40, "M", "Cálido", "Tarde", "Verano");
-        $preferencias[] = new Preferencias(12, 4, 3, 28, "F", "Cálido", "Mañana", "Verano");
-        $preferencias[] = new Preferencias(13, 1, 2, 25, "M", "Cálido", "Noche", "Verano");
-        $preferencias[] = new Preferencias(14, 2, 4, 30, "F", "Templado", "Tarde", "Primavera");
-        $preferencias[] = new Preferencias(15, 3, 1, 40, "M", "Cálido", "Tarde", "Verano");
-        $preferencias[] = new Preferencias(16, 4, 3, 28, "F", "Cálido", "Mañana", "Verano");
-        $preferencias[] = new Preferencias(17, 1, 4, 25, "M", "Cálido", "Mañana", "Verano");
-        $preferencias[] = new Preferencias(18, 2, 3, 30, "F", "Templado", "Tarde", "Primavera");
-        $preferencias[] = new Preferencias(19, 3, 2, 40, "M", "Cálido", "Tarde", "Verano");
-        $preferencias[] = new Preferencias(20, 4, 1, 28, "F", "Cálido", "Mañana", "Verano");
-        
-        // Asignar preferencias a usuarios
-        foreach ($usuarios as $usuario) {
-            $usuario->preferencias = array_filter($preferencias, function($preferencia) use ($usuario) {
-                return $preferencia->usuario_id == $usuario->usuario_id;
-            });
-        }
-        
-        // Recomendar actividades para un nuevo usuario
-        $usuario_nuevo = new Usuario(5, "Pedro", "Ramirez", "pedro@example.com", "789456123");
-        $preferencia_nueva = new Preferencias(21, 5, 4, 15, "M", "Templado", "Mañana", "Primavera");
-        $usuario_nuevo->preferencias = array($preferencia_nueva);
-        
-        $recomendaciones = recomendar($usuario_nuevo, $usuarios);
 
+        
+        $usuarios[] = new Usuario([
+            'usuario_id' => 1,
+            'nombre' => 'Juan',
+            'apellido' => 'Perez',
+            'email' => 'juan@perez.com',
+            'contrasena' => '123456',
+            'confirmado' => 1,
+            'token' =>'',
+            'admin' => 1,
+        ]);
 
+        $usuarios[] = new Usuario([
+            'usuario_id' => 2,
+            'nombre' => 'Maria',
+            'apellido' => 'Gomez',
+            'email' => 'correo@com',
+            'contrasena' => '123456',
+            'confirmado' => 1,
+            'token' =>'',
+            'admin' => 1,
+            'preferencias' => []
+        ]);
+
+        $usuarios[] = new Usuario([
+            'usuario_id' => 3,
+            'nombre' => 'Pedro',
+            'apellido' => 'Rodriguez',
+            'email' => 'pedro@rodri.com',
+            'contrasena' => '123456',
+            'confirmado' => 1,
+            'token' =>'',
+            'admin' => 1,
+            'preferencias' => []
+        ]);
+
+        $usuarios[] = new Usuario([
+            'usuario_id' => 4,
+            'nombre' => 'Ana',
+            'apellido' => 'Lopez',
+            'email' => 'correofsd@correo.com',
+            'contrasena' => '123456',
+            'confirmado' => 1,
+            'token' =>'',
+            'admin' => 1,
+            'preferencias' => []
+        ]);
+
+        $usuarios[] = new Usuario([
+            'usuario_id' => 5,
+            'nombre' => 'Carlos',
+            'apellido' => 'Gonzalez',
+            'email' => 'carlos@correo.com',
+            'contrasena' => '123456',
+            'confirmado' => 1,
+            'token' =>'',
+            'admin' => 1,
+            'preferencias' => []
+        ]);
+
+        $usuarios[] = new Usuario([
+            'usuario_id' => 6,
+            'nombre' => 'Lucia',
+            'apellido' => 'Garcia',
+            'email' => 'lucia@correo.com',
+            'contrasena' => '123456',
+            'confirmado' => 1,
+            'token' =>'',
+            'admin' => 1,
+            'preferencias' => []
+        ]);
+
+        // Crear Acitivdad como categorias con id, nombre, descripcion
+
+        $actividades[] = new Actividad(1, 'Museo', 'Visita a museo');
+        $actividades[] = new Actividad(2, 'Parque', 'Visita a parque');
+        $actividades[] = new Actividad(3, 'Playa', 'Visita a playa');
+        $actividades[] = new Actividad(4, 'Senderismo', 'Caminata en la naturaleza');
+        $actividades[] = new Actividad(5, 'Cine', 'Visita a cine');
+        $actividades[] = new Actividad(6, 'Teatro', 'Visita a teatro');
+        $actividades[] = new Actividad(7, 'Restaurante', 'Visita a restaurante');
+        $actividades[] = new Actividad(8, 'Bar', 'Visita a bar');
+        $actividades[] = new Actividad(9, 'Discoteca', 'Visita a discoteca');
+        $actividades[] = new Actividad(10, 'Centro comercial', 'Visita a centro comercial');
+
+        
+        
+
+        //crear las preferencias de los usuarios
+        $usuarios[0]->preferencias = new Preferencias(1, 1, 1, 25, "M", "Cálido", "Mañana", "Verano");
+        
+        $usuarios[1]->preferencias = new Preferencias(2, 2, 2, 30, "F", "Templado", "Tarde", "Primavera");
+
+        $usuarios[2]->preferencias = new Preferencias(3, 3, 3, 40, "M", "Cálido", "Tarde", "Verano");
+
+        $usuarios[3]->preferencias = new Preferencias(4, 4, 1, 28, "F", "Cálido", "Mañana", "Verano");
+
+        $usuarios[4]->preferencias = new Preferencias(5, 5, 2, 35, "M", "Cálido", "Tarde", "Verano");
+
+        $usuarios[5]->preferencias = new Preferencias(6, 6, 3, 45, "F", "Cálido", "Mañana", "Verano");
+
+        $usuario_nuevo = new Usuario(
+            [
+                'usuario_id' => 5,
+                'nombre' => 'Carlos',
+                'apellido' => 'Gonzalez',
+                'email' => 'Carlitos@correo.com',
+                'contrasena' => '123456',
+                'confirmado' => 1,
+                'token' =>'',
+                'admin' => 1
+                 
+            ]
+        );
+
+        $usuario_nuevo->preferencias = new Preferencias(21, 5, 1, 25, "M", "Cálido", "Mañana", "Verano");
 
         // obtener los sitios
         $sitios = Sitio::all();
         // obtener las empresas
         $empresas = Empresa::all();
+
+        $recomendaciones = recomendar($usuario_nuevo, $usuarios);
+        echo ("Para el usuario nuevo: " . $usuario_nuevo->nombre . " " . $usuario_nuevo->apellido . "<br>");
+        foreach ($recomendaciones as $usuario => $recomendacion) {
+            echo "Usuario: {$usuario}, Similitud: {$recomendacion['similitud']}<br>";
+        }
+
 
         // Renderizar la vista     
         $router->render('paginas/recomendacion', [
@@ -82,15 +158,12 @@ class RecomendacionController {
             'sitios' => $sitios,
             'empresas' => $empresas,
             'usuario_nuevo' => $usuario_nuevo,
-            'preferencia_nueva' => $preferencia_nueva,
             'actividades' => $actividades,
             'preferencias' => $preferencias,
             'usuarios' => $usuarios, 
         ]);
     }
 }
-
-
 
 
 ?>
