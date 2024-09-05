@@ -31,7 +31,6 @@ class Preferencias extends ActiveRecord {
         $this->clima = self::$climas[$clima] ?? null;
         $this->momento_dia = self::$momentos_dia[$momento_dia] ?? null;
         $this->estacion = self::$estaciones[$estacion] ?? null;
-
     }
 }
 ?>

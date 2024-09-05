@@ -53,23 +53,4 @@ class Empresa extends ActiveRecord{
         $this->longitud = $args['longitud'] ?? '';
     }
 
-    // public function validar() {
-    //     // if(!$this->nombre) {
-    //     //     self::$alertas['error'][] = 'El Nombre es Obligatorio';
-    //     // }
-    //     // if(!$this->descripcion) {
-    //     //     self::$alertas['error'][] = 'La Descripción es Obligatoria';
-    //     // }
-    //     // if(!$this->direccion) {
-    //     //     self::$alertas['error'][] = 'La Dirección es Obligatoria';
-    //     // }
-    //     // if(!$this->ciudad) {
-    //     //     self::$alertas['error'][] = 'La Ciudad es Obligatoria';
-    //     // }
-    //     // if(!$this->telefono) {
-    //     //     self::$alertas['error'][] = 'El Teléfono es Obligatorio';
-    //     // }
-
-    //     return self::$alertas;
-    // }    
 }

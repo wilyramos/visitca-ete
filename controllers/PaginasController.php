@@ -5,10 +5,6 @@ namespace Controllers;
 use MVC\Router;
 use Model\Sitio;
 use Model\Empresa;
-use Model\Usuario2;
-use Model\Actividad2;
-use Model\Preferencias2;
-
 
 
 class PaginasController {
@@ -35,18 +31,6 @@ class PaginasController {
         ]);
     }
 
-    public static function evento(Router $router) {
-        $router->render('paginas/devwebcamp', [
-            'titulo' => 'Sobre VisitCañete'
-        ]);
-    }
-
-    public static function paquetes(Router $router) {
-        $router->render('paginas/paquetes', [
-            'titulo' => 'paquetes de webdevcamp'
-        ]);
-    }
-
     public static function error(Router $router) {
         $router->render('paginas/error', [
             'titulo' => 'Página no encontrada'
@@ -58,8 +42,6 @@ class PaginasController {
         $sitios = Sitio::all();
         // obtener las empresas
         $empresas = Empresa::all();
-
-
 
         $router->render('paginas/recomendacion', [
             'titulo' => 'Recomendacion',

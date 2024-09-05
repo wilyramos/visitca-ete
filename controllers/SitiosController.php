@@ -28,7 +28,6 @@ class SitiosController{
 
         $sitios = Sitio::paginar($por_pagina, $paginacion->offset());
 
-
         $router->render('admin/sitios/index', [
             'titulo' => 'Sitios turisticos ',
             'sitios' => $sitios,
@@ -91,7 +90,6 @@ class SitiosController{
             'titulo' => 'Registrar Sitios / Actividades',
             'alertas' => $alertas,
             'sitio' => $sitio
-            //'redes' => json_decode($ponente->redes)
         ]);
     }
 

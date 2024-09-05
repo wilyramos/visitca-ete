@@ -2,11 +2,6 @@
     <h2 class="agenda__heading">Sitios turisticos</h2>
     <p class="agenda__description">Conoce los mejores sitios turisticos de la región. Descubre lugares increíbles, gastronomía y tradiciones.</p>
 
-    <form class="agenda__form">
-        <input type="text" class="agenda__input" placeholder="Buscar sitio turistico">
-        <button class="agenda__button">Buscar</button>
-    </form>
-
     <div class="sitios__grid">
         <?php foreach($sitios as $sitio) { ?>
             <div <?php aos_animacion(); ?> class="si">

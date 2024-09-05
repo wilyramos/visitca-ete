@@ -1,10 +1,6 @@
 <?php
 
 namespace Controllers;
-
-use Model\Evento;
-use Model\Registro;
-use Model\Usuario;
 use MVC\Router;
 
 class DashboardController{

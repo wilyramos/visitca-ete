@@ -96,7 +96,7 @@ $empresaAleatoria = $empresas[array_rand($empresas)];
                         <div class="sitio swiper-slide">
                             <div class="sitio__informacion">
                                 <h4 class="sitio__nombre"><?php echo htmlspecialchars($sitio->nombre); ?></h4>
-                                <p class="sitio__introduccion"><?php echo htmlspecialchars($sitio->descripcion); ?></p>
+                                <!-- <p class="sitio__introduccion"><?php echo htmlspecialchars($sitio->descripcion); ?></p> -->
                                 <picture>
                                     <source srcset="/img/sitios/<?php echo htmlspecialchars($sitio->imagen); ?>.webp" type="image/webp">
                                     <source srcset="/img/sitios/<?php echo htmlspecialchars($sitio->imagen); ?>.png" type="image/png">

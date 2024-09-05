@@ -1,71 +1,71 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
 
-
 .empresas {
     &__grid {
         @include m.contenedor;
-        @include m.grid(1, 5rem);
-        
+        @include m.grid(1, 3rem); // Reducir el espacio entre items
+
         @include m.tablet {
-            @include m.grid(2, 5rem);
+            @include m.grid(2, 3rem);
         }
 
         @include m.xl_desktop {
-            @include m.grid(3, 5rem);
+            @include m.grid(3, 3rem);
             align-items: flex-start;
         }
+    }
+
+    &__heading, &__descripcion {
+        text-align: center;
+        margin-bottom: 1rem; // Reducir el margen
     }
 }
 
 .empresa {
     @include m.card;
     position: relative;
-    border-radius: 1rem;
-    overflow: hidden; // Para que el contenido no se desborde al utilizar posición absoluta
-    transition: transform 0.5s ease, filter 0.5s ease; // Transiciones para el efecto hover
+    border-radius: 0.5rem; // Esquinas más redondeadas
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease; // Transiciones más rápidas
 
     &__imagen {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
+        height: auto; // Ajustar altura automáticamente para mantener proporción
+        max-height: 150px; // Limitar la altura máxima de las imágenes
         object-fit: cover;
-        border-radius: 1rem;
-        z-index: -1;
-        filter: brightness(0.95); // Reducir el brillo para que el texto sea más legible
-        transition: transform 0.5s ease; // Transición para el efecto hover
+        border-radius: 0.5rem; // Esquinas más redondeadas
+        filter: brightness(0.85); // Menor brillo para contraste
+        transition: transform 0.3s ease;
     }
 
-    &__contenido {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    &__informacion {
+        position: relative;
         z-index: 1;
-        padding: 2rem;
-        color: white; // Letras blancas
-        transition: opacity 0.5s ease; // Transición para el efecto hover
+        padding: 1rem;
+        background-color: rgba(88, 155, 255, 0.219); // Fondo oscuro semitransparente
+
+        &__nombre, &__ubicacion {
+            color: #fff; // Letras blancas
+        }
+
+        &__nombre {
+            font-size: 1.25rem; // Tamaño de fuente más pequeño
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
 
         &__ubicacion {
-            font-size: 2rem;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 0.875rem; // Tamaño de fuente más pequeño
         }
     }
 
     &:hover {
-        transform: scale(1.05); // Escalar ligeramente en hover
-        filter: brightness(0.9); // Aumentar el brillo en hover
+        transform: scale(1.02); // Escalar ligeramente
+        filter: brightness(0.9);
     }
 
     &:hover .empresa__imagen {
-        transform: scale(1.1); // Escalar ligeramente en hover
-    }
-
-    &:hover .empresa__contenido {
-        opacity: 0.9; // Reducir la opacidad en hover
+        transform: scale(1.05); // Escalar imagen ligeramente
     }
 }

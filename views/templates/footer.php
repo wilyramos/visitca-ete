@@ -12,7 +12,7 @@
         </div>
 
         <nav class="menu-redes"> 
-            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://facebook.com/8">
+            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://facebook.com/">
                 <span class="menu-redes__ocultar">Facebook</span>
             </a> 
             <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://twitter.com/">
@@ -21,11 +21,8 @@
             <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://youtube.com/">
                 <span class="menu-redes__ocultar">YouTube</span>
             </a> 
-            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://instagram.com/">
+            <a class="menu-redes__enlace" rel="noopener noreferrer" target="" href="https://instagram.com/">
                 <span class="menu-redes__ocultar">Instagram</span>
-            </a> 
-            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://tiktok.com/>
-                <span class="menu-redes__ocultar">Tiktok</span>
             </a> 
             <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://github.com/">
                 <span class="menu-redes__ocultar">GitHub</span>

@@ -3,7 +3,7 @@
         <nav class="header__navegacion">
             <a href="/" class="header__enlace">Inicio</a>
             <a href="/sitios" class="header__enlace" <?php echo pagina_actual('/sitios') ? 'navegacion__enlace--actual' : ''; ?>">Sitios</a>
-            <a href="/paquetes" class="header__enlace" <?php echo pagina_actual('/paquetes') ? 'navegacion__enlace--actual' : ''; ?>">Experiencias</a>
+            <a href="/empresas" class="header__enlace" <?php echo pagina_actual('/paquetes') ? 'navegacion__enlace--actual' : ''; ?>">Experiencias</a>
             <a href="/recomendacion" class="header__enlace" <?php echo pagina_actual('/recomendacion') ? 'navegacion__enlace--actual' : ''; ?>">Recomendacion</a>
             <!-- <a href="/registro" class="header__enlace" <?php echo pagina_actual('/registro') ? 'navegacion__enlace--actual' : ''; ?>">Gastronomía</a> -->
                 <?php if(is_auth()){ ?>
@@ -22,9 +22,7 @@
                     VisitCañete
                 </h1>
             </a>
-
-            <p class="header__texto">Cañete, Perú, un tesoro por descubrir. Déjate cautivar por sus encantos naturales y su rica cultura.</p>
-            <a href="/registro" class="header__boton">Descubrir</a>
+            <p class="header__texto">Un tesoro por descubrir. Déjate cautivar por sus encantos naturales y su rica cultura.</p>
         </div>
     </div>
 </header>

@@ -1,10 +1,11 @@
 {
-  "name": "devwebcamp-php-mvc-mysql",
+  "name": "visitCañete in PHP",
   "version": "1.0.0",
-  "description": "Proyecto Final Desarrollo Web Completo con @codigoconjuan",
+  "description": "Proyecto Final Desarrollo Web Completo",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "build": "gulp build"
   },
   "author": "",
   "license": "ISC",

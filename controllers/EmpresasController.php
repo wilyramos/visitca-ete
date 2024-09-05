@@ -101,7 +101,6 @@ class EmpresasController{
             'titulo' => 'Registrar Empresa / Agencia',
             'alertas' => $alertas,
             'empresa' => $empresa
-            //'redes' => json_decode($ponente->redes)
         ]);
     }
 
